@@ -10,7 +10,7 @@ import os
 # Ensure project root is on path
 sys.path.insert(0, os.path.dirname(__file__))
 
-from backend.api.main import app  # noqa: F401
+from api.main import app  # noqa: F401
 
 if __name__ == "__main__":
     import uvicorn

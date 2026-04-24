@@ -180,7 +180,7 @@ def _env_state_to_dict(env) -> Dict:
 
 def _auto_actions(env) -> Dict[int, int]:
     """Greedy auto-pilot: each agent moves toward nearest compatible event."""
-    from backend.core.environment import AGENT_EVENT_MAP
+    from core.environment import AGENT_EVENT_MAP
     actions = {}
     n = env.grid_size
     for agent in env.agents:
@@ -242,7 +242,7 @@ def health():
 @app.get("/cities")
 def list_cities():
     """List all available Indian cities."""
-    from backend.core.indian_cities import list_available_cities, get_city_metadata
+    from core.indian_cities import list_available_cities, get_city_metadata
     cities = list_available_cities()
     return {
         "available_cities": cities,
@@ -252,7 +252,7 @@ def list_cities():
 
 @app.post("/simulate/create", response_model=SessionResponse)
 def create_simulation(config: SimConfig):
-    from backend.core.environment import OpenEnv
+    from core.environment import OpenEnv
     session_id = str(uuid.uuid4())[:8]
     env = OpenEnv(
         num_ems=config.num_ems,
@@ -384,7 +384,7 @@ def start_training(req: TrainRequest, background_tasks: BackgroundTasks):
         try:
             import sys
             sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-            from backend.core.trainer import OpenEnvTrainer, TrainConfig
+            from core.trainer import OpenEnvTrainer, TrainConfig
             config = TrainConfig(
                 total_episodes=req.total_episodes,
                 lr=req.lr,

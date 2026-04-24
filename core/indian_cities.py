@@ -122,7 +122,7 @@ CITY_INFRASTRUCTURE = {
 
 def load_city_grid(city: str = "bangalore") -> np.ndarray:
     """Load city grid for Indian metro with real infrastructure."""
-    from backend.core.environment import CellType
+    from core.environment import CellType
     
     city_lower = city.lower()
     if city_lower not in CITY_INFRASTRUCTURE:

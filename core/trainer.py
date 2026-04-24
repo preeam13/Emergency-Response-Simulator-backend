@@ -356,7 +356,7 @@ class OpenEnvTrainer:
         log.info(f"Using device: {self.device}")
 
         # Import here to avoid circular
-        from backend.core.environment import OpenEnv, AgentType
+        from core.environment import OpenEnv, AgentType
         self.EnvClass = OpenEnv
         self.AgentType = AgentType
 

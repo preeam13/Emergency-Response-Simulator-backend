@@ -67,7 +67,7 @@ def load_bangalore_grid() -> np.ndarray:
     0 = Residential, 1 = Commercial, 2 = Industrial, 3 = Parks,
     4 = Hospital, 5 = Fire Station, 6 = Police Station, 7 = Road, 9 = Water
     """
-    from backend.core.environment import CellType
+    from core.environment import CellType
     
     grid = np.full((GRID_SIZE, GRID_SIZE), CellType.RESIDENTIAL, dtype=np.int8)
     

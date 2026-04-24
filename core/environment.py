@@ -316,7 +316,7 @@ class OpenEnv:
 
         # Build city
         if city.lower() in ["bangalore", "mumbai", "delhi", "hyderabad", "kolkata", "chennai", "pune", "ahmedabad"]:
-            from backend.core.indian_cities import load_city_grid, load_city_population
+            from core.indian_cities import load_city_grid, load_city_population
             self.grid = load_city_grid(city)
             self.base_population = load_city_population(city)
         else:
