@@ -1,0 +1,37 @@
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Logs and local files
+*.log
+*.sqlite3
+
+# Test / coverage
+.pytest_cache/
+.mypy_cache/
+.coverage
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# Optional data tracking
+wandb/

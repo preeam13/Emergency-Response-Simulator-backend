@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: file2-openenv-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python run.py
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    healthCheckPath: /health

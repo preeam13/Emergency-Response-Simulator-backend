@@ -1,0 +1,30 @@
+# FILE(2) — OpenEnv Backend Requirements
+# Python 3.10+
+
+# Core framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+
+# Scientific computing
+numpy>=1.24.0
+torch>=2.0.0
+
+# HTTP / APIs
+httpx>=0.25.0
+requests>=2.31.0
+
+# Training
+tqdm>=4.66.0
+
+# Optional: experiment tracking
+wandb>=0.16.0
+
+# Optional: extended dataset support
+pandas>=2.0.0
+
+# Rate limiting
+slowapi>=0.1.9
+
+# Env config
+python-dotenv>=1.0.0
