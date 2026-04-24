@@ -208,6 +208,32 @@ def _auto_actions(env) -> Dict[int, int]:
 # ─────────────────────────────────────────────
 # Routes
 # ─────────────────────────────────────────────
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "message": "OpenEnv API",
+        "health": "/health",
+        "docs": "/docs",
+        "endpoints": [
+            "/health",
+            "/cities",
+            "/simulate/create",
+            "/simulate/step",
+            "/simulate/step/bulk",
+            "/simulate/state/{session_id}",
+            "/simulate/stream/{session_id}",
+            "/simulate/{session_id}",
+            "/simulate/metrics/{session_id}",
+            "/train/start",
+            "/train/status/{job_id}",
+            "/train/list",
+            "/metrics/global",
+            "/datasets/info",
+        ],
+    }
+
+
 @app.get("/health")
 def health():
     return {"status": "ok", "timestamp": time.time(), "active_sessions": len(_envs)}
