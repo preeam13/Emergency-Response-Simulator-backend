@@ -5,7 +5,7 @@ services:
     region: oregon
     plan: free
     buildCommand: pip install -r backend/requirements.txt
-    startCommand: python run.py
+    startCommand: python backend/run.py
     envVars:
       - key: PORT
         value: 8000
